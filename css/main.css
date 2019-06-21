@@ -1060,7 +1060,7 @@ pre .javascript .function {
   box-sizing: border-box;
   position: fixed;
   bottom: -100px;
-  right: 30px;
+  left: 30px;
   z-index: 1050;
   padding: 0 6px;
   width: 24px;
@@ -1081,7 +1081,7 @@ pre .javascript .function {
 @media (max-width: 991px) {
   .back-to-top {
     opacity: 0.8;
-    right: 20px;
+    left: 30px;
   }
 }
 .header {
@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #71747c;
+  background: #e0050d;
 }
 .feed-link,
 .chat {
@@ -2473,4 +2473,36 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+body {
+  background: url("/images/bg3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ff9;
+}
+.header {
+  background: url("/images/bg2.jpg") none repeat scroll !important;
+}
+.footer {
+  background: rgba(123,123,123,0.1) none repeat scroll !important;
+}
+#sidebar {
+  background: url("/images/bg2.jpg");
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#sidebar p,
+#sidebar span,
+#sidebar a {
+  color: #333;
+}
+.sidebar {
+  left: 0;
+}
+.sidebar-toggle {
+  left: 30px;
 }
