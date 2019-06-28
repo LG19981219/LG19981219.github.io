@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1224ff;
+  background: #f09883;
 }
 .feed-link,
 .chat {
@@ -2480,7 +2480,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  color: #ff9;
+/*color:#FF9;*/
 }
 .header {
   background: url("/images/bg2.jpg") none repeat scroll !important;

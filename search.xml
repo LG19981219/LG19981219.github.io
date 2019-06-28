@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[flex弹性布局 三]]></title>
+    <url>%2F2019%2F06%2F28%2Fflex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80-%E4%B8%89%2F</url>
+    <content type="text"><![CDATA[justify (设置每个元素在主轴上的对齐方式)它有五个值分别为flex-start(默认,左对齐),flex-end(右对齐),center(居中)space-between和space-around。一定注意该属性是设置主轴的对齐方式,因为默认的主轴为水平,所以下列代码测试图都为水平主轴，当其主轴为其他方向时，对齐方式类似，当设置纵轴为主轴时，一定要设置一个给定高度，否则无法看出效果。以下为测试代码截图:justify-content : flex-end justify-content : centerjustify-content : space-betweenjustify-content : space-around]]></content>
+      <categories>
+        <category>flex</category>
+      </categories>
+      <tags>
+        <tag>flex布局之justify-content</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[flex弹性布局 二]]></title>
+    <url>%2F2019%2F06%2F28%2Fflex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80-%E4%BA%8C%2F</url>
+    <content type="text"><![CDATA[flex-wrap (控制元素换行)它有三个值分别为nowrap(默认,不换行),wrap(换行),wrap-reverse(逆向换行)在测试换行时注意将外层的container的width设置的小于内部元素的总宽度，这样才会换行。以下为测试代码截图:flex-wrap : nowrap flex-wrap : wrapflex-wrap : wrap-reverse]]></content>
+      <categories>
+        <category>flex</category>
+      </categories>
+      <tags>
+        <tag>flex布局之flex-wrap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[flex弹性布局 一]]></title>
+    <url>%2F2019%2F06%2F28%2Fflex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80-%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[flex弹性盒模型flex弹性盒模型图如下 其分为容器container,内部项目(元素)flex item,主轴(默认为水平方向),交叉轴(纵轴)设置盒子为弹性盒子，只需要设置display:flex即可,接下来看一下如何控制弹性盒子， flex direction (控制元素的排列方向)它有四个值分别为row(默认,水平),row-reverse(逆水平),column(纵轴),column-reverse(逆纵轴)以下为测试代码截图:flex-direction : rowflex-direction : row-reverseflex-direction : columnflex-direction : column-reverse]]></content>
+      <categories>
+        <category>flex</category>
+      </categories>
+      <tags>
+        <tag>flex布局之flex-direction</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[建站那些事]]></title>
     <url>%2F2019%2F06%2F23%2F%E5%BB%BA%E7%AB%99%E9%82%A3%E4%BA%9B%E4%BA%8B%2F</url>
     <content type="text"><![CDATA[关于本站为什么建站这个寒假就有建立一个自己博客的想法，觉得可以在自己的博客上写一些东西，是一件很cool的事情。但为了恶补前端的知识，就暂时搁置了这个想法，一门心思的专心于前端三剑客(HTML,CSS,JavaScript)的学习，现在也算把基础知识都过了一遍，就决定来建立自己的个人博客，记录一下自己的日常感想(性格使然，遇见事情，总忍不住联想感叹)和学习前端时所碰到的有趣的知识(写文章时也是对知识的一个回顾)。 怎么建站有了想法就得开始行动(百度)起来了，看了各种组合搭配，最终还是选择了Hexo和github的方式，至于为什么选择这种方式，一个字”穷”,毕竟这种方式免费，还能顺带学习一下git命令,一举两得。选定了方式，就要开始选择自己博客的主题了，于是就去Hexo的主题商店里挑选自己喜欢的主题，看来看去都觉得不符合自己的心意，恰巧在浏览别人博客时发现了一个十分简洁的主题next(就是你了)。然后就按网上的流程开始了自己的建站之旅，细节这里我就不过多赘述了，毕竟网上大佬总结的很详细，按着一步一步来，一般不会出啥大问题，但小问题肯定是会有的，毕竟每个人的配置和环境都有所不同，这时候就要发挥百度的神奇力量了，打开百度，输入你的问题，你就能收获各种各样的解答。解决掉几个小的问题后，总算是把自己的博客搭起来了，在输入域名弹出来自己博客的那一刻，觉得自己的努力没有白费，小有收获。 关于本人自我介绍长安大学的一名计算机大三学生，自我感觉良好，其实是个菜鸡。大学前两年混着混着，就到了该找工作步入社会的阶段了。回想起前两年的大学经历，甚是遗憾——没有仔细钻研编程，现在才幡然醒悟，开始恶补。所幸有着点基础，现在学起来，才没有那么吃力，也慢慢通过前端找到了写代码的乐趣，毕竟以前就是单纯的逻辑，对着黑乎乎的操作窗口实在是提不起什么兴趣，而前端则能让我实实在在的看见我写的东西。每学到新的知识，就意味着自己可以使用更多的方法去实现更好的网页，自然也对前端慢慢地有了兴趣。 短期目标最近的目标还是好好学习前端的知识，准备迎接即将到来的秋招。希望自己能在秋招中找到一份好的工作，开始自己的另一种生活。]]></content>
