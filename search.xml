@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[flex弹性布局 一]]></title>
     <url>%2F2019%2F06%2F28%2Fflex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80-%E4%B8%80%2F</url>
-    <content type="text"><![CDATA[flex弹性盒模型flex弹性盒模型图如下 其分为容器container,内部项目(元素)flex item,主轴(默认为水平方向),交叉轴(纵轴)设置盒子为弹性盒子，只需要设置display:flex即可,接下来看一下如何控制弹性盒子， flex direction (控制元素的排列方向)它有四个值分别为row(默认,水平),row-reverse(逆水平),column(纵轴),column-reverse(逆纵轴)以下为测试代码截图:flex-direction : rowflex-direction : row-reverseflex-direction : columnflex-direction : column-reverse]]></content>
+    <content type="text"><![CDATA[flex弹性盒模型flex弹性盒模型图如下 其分为容器container,内部项目(元素)flex item,主轴(默认为水平方向),交叉轴(纵轴)设置盒子为弹性盒子，只需要设置display:flex即可,接下来看一下如何控制弹性盒子， flex direction (控制元素的排列方向)它有四个值分别为row(默认,水平),row-reverse(逆水平),column(纵轴),column-reverse(逆纵轴)以下为测试代码截图:flex-direction : row flex-direction : row-reverse flex-direction : columnflex-direction : column-reverse]]></content>
       <categories>
         <category>flex</category>
       </categories>
