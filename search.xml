@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[支付宝小程序之数据绑定和渲染]]></title>
+    <url>%2F2019%2F07%2F05%2F%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%92%8C%E6%B8%B2%E6%9F%93%2F</url>
+    <content type="text"><![CDATA[数据绑定支付宝小程序的数据绑定主要是通过获取每一个page的data对象，然后通过该表达式来动态的渲染页面的内容，下面做一个简单的示例。首先新建一个小程序的页面，在该页面的.axml写入&lt;view&gt;&lt;/view&gt;,这里的myName就是你所需要展示的数据。这时，再去该页面的js文件中新建data对象，data{myName : &quot;LG&quot;},保存，就可以在模拟器中看到我们自己定义的数据被渲染。 数据渲染数据渲染有条件渲染和for循环列表渲染两种 条件渲染条件渲染即满足条件才进行渲染，否则不进行渲染。基本格式为&lt;view a:if=&quot;&quot;&gt;内容&lt;/view&gt;,当flag为真时，内容才会被渲染，这里的flag可以写在data对象中，即通过数据绑定的方式传入true或false.条件渲染也可以通过运算结果进行判断，基本格式为&lt;view a:if=&quot;&quot;&gt;内容1&lt;/view&gt;&lt;view a:elif=&quot;&quot;&gt;内容二&lt;/view&gt;&lt;view a:elif=&quot;&quot;&gt;内容3&lt;/view&gt;条件1满足，显示内容1，条件2满足，显示内容2，否则显示内容3. for循环列表渲染for循环渲染主要是通过绑定data中的数组,在页面循环显示基本格式为&lt;view a:for=&quot;&quot; a:for-item=&quot;item&quot; a:for-index=&quot;index&quot;&gt;&lt;/view&gt;其中for-item为渲染的每一项，for-index为数组下标，这两项默认为item和index，当然你也可以自行更改。 view和block的区别在进行循环时，常用的外部容器为view和block，它两的在用法上没有区别，但是view相当于复制，而block则相当于直接在页面写内容。]]></content>
+      <categories>
+        <category>支付宝小程序</category>
+      </categories>
+      <tags>
+        <tag>数据渲染和绑定</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[javascript基本类型及操作符]]></title>
     <url>%2F2019%2F07%2F03%2Fjavascript%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%93%8D%E4%BD%9C%E7%AC%A6%2F</url>
     <content type="text"><![CDATA[前言最近在回顾之前学习的知识，打算把自己复习的这些知识的记录下来，也是一个加强记忆的过程 javascript基本数据类型javascript中有基本数据类型和复杂（引用）数据类型,基本数据类型包括Undefined,Number,String,Number,Boolean,Null,Symbol(ES6新增,表示独一无二的值)，引用类型统称Object对象,主要包括对象，函数和数组。这里只回顾基本数据类型。 NumberNumber表示数值类型，包括整数和浮点数。 NaNNaN是一个特殊的数值，表示非数值。其主要有两个规则1.任何涉及NaN的操作，都会返回NaN。2.NaN与任何值都不相等，包括它自身。isNaN是用来检测参数是否为非数值,返回值为Boolean,在检测时，会先尝试将参数转换为数值，在进行判断。 数值转换数制转换主要有三个函数Number(),ParseInt(),ParseFloat()。其中Number为强制转换。ParseInt()则是将参数转换为整数，第一个参数为需要转换的值，必须以数字开头才能转换，第二个参数为进制。转换为空字符串时为NaN。parserFloat()转换为浮点数。 StringString表示字符串类型,用双引号或者单引号都可以表示字符串。 String转换toSting()和String()都可以进行转换，其中String()的语法与Number()类似，都是强制转换。toString的语法为str.toString(),str为要转换的值。 BooleanBoolean只有两个值，true和false，表示真和假。 Boolean转换规则1.除0以外的所有数字，转换后都为true。2.除””字符串以外，转换后都为true。3.null和undefined转换后都为false。 javascript操作符基本操作符加减乘除就不用在赘述了，在使用时注意，其会将字符串隐式转换为数值 a++和++a的区别a++和++a都是递增的意思，不同之处在于a++会先返回原值，在返回递增之后的值。++a直接返回递增后的值 比较操作符== 操作符是比较值，但不比较类型。===则不但比较值，还会比较类型 三元操作符条件? 执行代码1 : 执行代码2 当条件为真时执行代码1,为假时执行代码2 逻辑操作符&amp;&amp;&amp;&amp;表示’与’,只有当条件都为真时，才为真，有一个为假，都为假。但其不一定返回值都为Boolean，以下为不是Boolean的规则1.当第一个条件转换为真时,返回第二个值。2.有一个条件为NaN时，返回NaN。3.有一个条件为null时，返回null。4.有一个条件为undefined时，返回undefined。5.当同时具有NaN,null,undefined，谁在前返回谁。 ||||表示或操作，只要有一个为真就为真。其不是Boolean的规则与&amp;&amp;相反 ！表示非，即取反的意思。]]></content>
