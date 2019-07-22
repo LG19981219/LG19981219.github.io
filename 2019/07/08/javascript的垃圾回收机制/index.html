@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="天天开心咯">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LG">
-<meta property="og:url" content="https://LG19981219.github.io/tags/Promise/index.html">
+  <meta name="description" content="js的垃圾回收机制所谓垃圾回收机制，就是制定一套规则去回收掉那些不再使用的数据，释放掉他们所占用的内存,js中垃圾收集器会周期性的执行这套规则去实现垃圾的回收。目前在浏览器中使用的两个规则，分别为标记清除和引用计数。 标记清除js中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为">
+<meta name="keywords" content="javascript垃圾回收">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript的垃圾回收机制">
+<meta property="og:url" content="https://LG19981219.github.io/2019/07/08/javascript的垃圾回收机制/index.html">
 <meta property="og:site_name" content="LG">
-<meta property="og:description" content="天天开心咯">
+<meta property="og:description" content="js的垃圾回收机制所谓垃圾回收机制，就是制定一套规则去回收掉那些不再使用的数据，释放掉他们所占用的内存,js中垃圾收集器会周期性的执行这套规则去实现垃圾的回收。目前在浏览器中使用的两个规则，分别为标记清除和引用计数。 标记清除js中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-22T14:04:15.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LG">
-<meta name="twitter:description" content="天天开心咯">
+<meta name="twitter:title" content="javascript的垃圾回收机制">
+<meta name="twitter:description" content="js的垃圾回收机制所谓垃圾回收机制，就是制定一套规则去回收掉那些不再使用的数据，释放掉他们所占用的内存,js中垃圾收集器会周期性的执行这套规则去实现垃圾的回收。目前在浏览器中使用的两个规则，分别为标记清除和引用计数。 标记清除js中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://LG19981219.github.io/tags/Promise/">
+  <link rel="canonical" href="https://LG19981219.github.io/2019/07/08/javascript的垃圾回收机制/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>标签: Promise | LG</title>
+  <title>javascript的垃圾回收机制 | LG</title>
   
 
 
@@ -171,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -226,7 +228,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -290,25 +292,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -354,57 +337,209 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Promise<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://LG19981219.github.io/2019/07/08/javascript的垃圾回收机制/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LG">
+      <meta itemprop="description" content="天天开心咯">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LG">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/06/02/ES6之Promise/" itemprop="url">
-            
-              <span itemprop="name">ES6之Promise</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">javascript的垃圾回收机制
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-02T11:04:30+08:00" content="2019-06-02">
-          06-02
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-08 21:47:18" itemprop="dateCreated datePublished" datetime="2019-07-08T21:47:18+08:00">2019-07-08</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="js的垃圾回收机制"><a href="#js的垃圾回收机制" class="headerlink" title="js的垃圾回收机制"></a>js的垃圾回收机制</h1><p>所谓垃圾回收机制，就是制定一套规则去回收掉那些不再使用的数据，释放掉他们所占用的内存,js中垃圾收集器会周期性的执行这套规则去实现垃圾的回收。目前在浏览器中使用的两个规则，分别为<strong>标记清除和引用计数</strong>。</p>
+<h2 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h2><p>js中最常用的垃圾回收方式就是标记清除。当变量进入环境时，例如，在函数中声明一个变量，就将这个变量标记为“进入环境”。从逻辑上讲，永远不能释放进入环境的变量所占用的内存，因为只要执行流进入相应的环境，就可能会用到它们。而当变量离开环境时，则将其标记为“离开环境”。<br>可以使用任何方式来标记变量。比如，可以通过翻转某个特殊的位来记录一个变量何时进入环境，或者使用一个“进入环境”变量列表及一个“离开环境”变量列表来跟踪哪个变量发生了变化。说到底，如何标记变量其实并不重要，关键在于采取什么策略。<br>垃圾回收器在运行的时候会给存储在内存中的所有变量都加上标记（当然，可以使用任何标记方式）。然后，它会去掉环境中的变量以及被环境中的变量引用的变量的标记。而在此之后再被加上标记的变量将被视为准备删除的变量，原因是环境中的变量已经无法访问到这些变量了。最后，垃圾回收器完成内存清除工作，销毁那些带标记的值并回收它们所占用的内存空间。</p>
+<a id="more"></a>  
+<h2 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h2><p>引用计数的含义是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数就是1。如果同一个值又被赋给另一个变量，则该值的引用次数加1。相反，如果包含对这个值引用的变量又取得了另外一个值，则这个值的引用次数减1。当这个值的引用次数变成0时，则说明没有办法再访问这个值了，因而就可以将其占用的内存空间回收回来。这样，当垃圾回收器下次再运行时，它就会释放那些引用次数为0的值所占用的内存.<br>Netscape Navigator3是最早使用引用计数策略的浏览器，但很快它就遇到一个严重的问题：循环引用。循环引用指的是对象A中包含一个指向对象B的指针，而对象B中也包含一个指向对象A的引用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function problem()&#123;</span><br><span class="line">	var objA=new Object();</span><br><span class="line">	var objB=new Object();</span><br><span class="line"> </span><br><span class="line">	objA.b=objB;</span><br><span class="line">	objB.a=objA;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，objA和objB通过各自的属性相互引用；也就是说，这两个对象的引用次数都是2。在采用标记清除策略的实现中，由于函数执行之后，这两个对象都离开了作用域，因此这种相互引用不是问题。但采用引用计数策略的实现中，当函数执行完毕后，objA和objB还将继续存在，因为它们的引用次数永远不会是0。假如这个函数被重复多次调用，将导致大量内存得不到回收。为此Netscape在Navigator4中放弃了引用计数的方式，转而采用标记清除来实现其垃圾回收机制。可是，引用计数导致的麻烦并未终结。</p>
+<p>　　我们知道，IE中有一部分对象并不是原生js对象。例如，其DOM和BOM中的对象就是使用C++以COM对象的形式实现的，而COM对象的垃圾回收机制采用的就是引用计数策略。因此，即使IE的js引擎采用标记清除策略来实现，但js访问的COM对象依然是基于引用计数策略的。换句话说，只要在IE中涉及COM对象，就会存在循环引用的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var element=document.getElementById(&quot;some_element&quot;);</span><br><span class="line">var myObject=new Object();</span><br><span class="line">myObject.e=element;</span><br><span class="line">element.o=myObject;</span><br></pre></td></tr></table></figure>
+
+<p>这个例子在一个DOM元素（element)与一个原生js对象（myObject)之间创建了循环引用。其中，变量myObject有一个名为element的属性指向element对象；而变量element也有一个属性名为o回指myObject。由于存在这个循环引用，即使例子中的DOM从页面中移除，它也永远不会被回收。</p>
+<p>　　为了避免类似这样的循环引用问题，最好是在不使用它们的时候手工断开原生js对象与DOM元素之间的连接。例如，可以使用下面的代码消除前面例子创建的循环引用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myObject.element=null;</span><br><span class="line">element.o=null;</span><br></pre></td></tr></table></figure>
+
+<p>将变量设置为null意味着切断变量与它此前引用的值之间的连接。当垃圾回收器下次运行时，就会删除这些值并回收它们占用的内存。<br>转载自<a href="https://blog.csdn.net/pvfhv/article/details/8589614" target="_blank" rel="noopener">https://blog.csdn.net/pvfhv/article/details/8589614</a></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript垃圾回收/" rel="tag"><i class="fa fa-tag"></i> javascript垃圾回收</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/07/javascript的作用域及解析机制/" rel="next" title="javascript的作用域及解析机制">
+                <i class="fa fa-chevron-left"></i> javascript的作用域及解析机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -424,8 +559,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -567,6 +711,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js的垃圾回收机制"><span class="nav-number">1.</span> <span class="nav-text">js的垃圾回收机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标记清除"><span class="nav-number">1.1.</span> <span class="nav-text">标记清除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用计数"><span class="nav-number">1.2.</span> <span class="nav-text">引用计数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -740,6 +901,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -755,6 +920,8 @@
 
   
 
+
+  
 
 
   
