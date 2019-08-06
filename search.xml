@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初识Vue.js(二)]]></title>
+    <url>%2F2019%2F07%2F26%2F%E5%88%9D%E8%AF%86Vue-js-%E4%BA%8C%2F</url>
+    <content type="text"><![CDATA[过滤器vue.js允许我们自己自定义过滤器，用于格式化一些文本，它只能用在插值和v-bind表达式上。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示；vue中的过滤器主要包括全局过滤器和私有过滤器。全局过滤器的定义主要是通过Vue.filter(‘过滤器名称’,处理函数)进行定义，他接受两个参数，第一个参数为过滤器的名称，第二个为处理函数。处理函数可以有n个参数，其中第一个为变量自身，后面的参数为传递过来的参数。过滤器也支持同时使用多个过滤器，根据调用的先后顺序，将前一个过滤器的处理结果，当作下一个过滤器的初始值。私有过滤器是在当前vm实例上通过filters属性进行定义，它只能在当前vm实例控制的区域才能发挥作用，其他与全局过滤器一致。当有私有过滤器与全局过滤器重名时，采用就近原则，优先调用私有过滤器。 自定义指令vue.js允许我们自定义指令，可以将一些常用的操作定义为指令。通过Vue.directive(‘指令名称’,对象)方法可以定义指令，这里指令名称在定义时不用加v-前缀，但是在调用时，需加v-前缀。第二个参数为一个对象，它具有一些指令相关的函数我这只列举常用的三个bind,inserted,updated。其中bind表示指令刚绑定到元素时，inserted表示将元素插入DOM时，updated表示当数据更新时。这些函数有多个参数，第一个参数为el，表示该元素自身，为一个DOM对象，第二个参数为binding，时一个对象，它包含了一些指令的信息。下面为一个自定义一个自动获取焦点的指令v-focus。 自定义全局和局部的 自定义指令： 123456789101112131415161718192021222324252627282930313233343536// 自定义全局指令 v-focus，为绑定的元素自动获取焦点：Vue.directive(&apos;focus&apos;, &#123; inserted: function (el) &#123; // inserted 表示被绑定元素插入父节点时调用 el.focus(); &#125;&#125;);// 自定义局部指令 v-color 和 v-font-weight，为绑定的元素设置指定的字体颜色 和 字体粗细： directives: &#123; color: &#123; // 为元素设置指定的字体颜色 bind(el, binding) &#123; el.style.color = binding.value; &#125; &#125;, &apos;font-weight&apos;: function (el, binding2) &#123; // 自定义指令的简写形式，等同于定义了 bind 和 update 两个钩子函数 el.style.fontWeight = binding2.value; &#125; &#125; 自定义指令的使用方式： 12&lt;input type=&quot;text&quot; v-model=&quot;searchName&quot; v-focus v-color=&quot;&apos;red&apos;&quot; v-font-weight=&quot;900&quot;&gt;]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识vue.js(一)]]></title>
     <url>%2F2019%2F07%2F24%2F%E5%88%9D%E8%AF%86vue-js-%E4%B8%80%2F</url>
     <content type="text"><![CDATA[前言花了一周左右的时间学习了一下vue.js前端框架，作为目前的前端三大主流框架，vue感觉还是挺好用的，让自己对前端有了一个更深的认识，所以就打算写几篇博客介绍一下vue，一方面是为了记录，另一方面也是对之前的学习的一个回顾和总结。 MVC与MVVM简单介绍一下MVC与MVVM,至于为什么介绍他们，是因为他可以让你在大局上理解vue是在什么地方干什么事情。MVVM是Model-View-ViewModel的简写。即模型-视图-视图模型。模型指的是后端传递的数据。视图指的是所看到的页面。视图模型mvvm模式的核心，它是连接view和model的桥梁。它有两个方向：一是将模型转化成视图，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将视图转化成模型，即将所看到的页面转化成后端的数据。MVC是Model-View- Controller的简写。即模型-视图-控制器。M和V指的意思和MVVM中的M和V意思一样。C即Controller指的是页面业务逻辑。使用MVC的目的就是将M和V的代码分离,MVC是单向通信。也就是View跟Model，必须通过Controller来承上启下。MVC和MVVM的区别并不是VM完全取代了C，ViewModel存在目的在于抽离Controller中展示的业务逻辑，而不是替代Controller，其它视图操作业务等还是应该放在Controller中实现. Vue与MVVM简单了解了MVVM,然后就可以理解Vue，因为Vue就是一个基于MVVM提出的前端框架。初始化一个Vue实例，它的data就相当于M,整个实例就是MV,所控制的区域就是V.实际代码如下: 123456789&lt;div id=&quot;div&quot;&gt;&#123;&#123; msg &#125;&#125;&lt;/div&gt; &lt;script&gt; var vm = new Vue(&#123; el: &apos;#div&apos;, data: &#123; msg: &apos;Hello World&apos;, &#125; &#125;) &lt;/script&gt; 这里id为div的容器,就是Vue所控制的区域,对应于你创建出来的Vue实例的el,data也就是你需要展示的数据，然后通过插值表达式就可以将数据渲染到页面上了。 几种常见的Vue指令v-on:是事件绑定的指令，他可以在元素身上绑定methods中定义的方法，可以简写为@符号。v-bind:是用来绑定属性的指令，他是用来将data中的变量属性，绑定在该元素上，可以简写为:。v-model是用来实现双向数据绑定的指令，它可以实现元素与data的双向绑定，就是说v-bind是从data中取出数据，就不放回了，但是v-model取出数据后还可以放回。v-for是用来循环data中的数组，并将其渲染到页面上，:key是为v-for循环指定一个唯一的标识符.v-show和v-if都是用来渲染数据的指令，一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。]]></content>
