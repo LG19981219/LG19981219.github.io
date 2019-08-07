@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初识Vue.js(三)]]></title>
+    <url>%2F2019%2F07%2F28%2F%E5%88%9D%E8%AF%86Vue-js-%E4%B8%89%2F</url>
+    <content type="text"><![CDATA[Vue的生命周期Vue的生命周期就如同自然界各种生物的生命周期一样，从生到死所经历的一系列事情。分为创建，挂载，运行，销毁四个阶段，每个阶段又有前后之分。所以一共有8个生命周期函数，也叫生命周期钩子。创建阶段包含beforeCreate和created两个事件。当我们用var vm = Vue({})去声明一个Vue实例时，就要开始创建Vue实例，首先是初始化一个空的Vue的实例对象，然后就到了beforeCreated函数，此时不管是data中的数据，还是methods中的数据都没有被初始化，所以这时只是一个空的Vue实例。执行完beforeCreated后就开始初始化data和methods中的数据和方法,然后到created钩子,创建阶段结束。通过创建阶段的执行过程，我们可以看出，要想使用data中的数据或者methods中的方法，最早只能在created中使用。挂载阶段包含beforeMount和mounted两个事件。当创建阶段完成后，就需要根据创建阶段初始化好的数据，在内存中渲染好DOM，执行beforeMount钩子，也就是说在beforeMount函数执行时，模板还在内存中，并没有挂载到页面中去。当beforeMount执行完毕后，会将内存中的DOM挂载到页面上去，执行mounted钩子。也就是说如果在操作DOM，最早得在mounted中使用。 运行阶段包括beforeUpdate,updated两个事件。运行阶段主要就是数据的更新，以及从新渲染到页面中去。当数据发生改变时，会执行beforeUpdate,但是此时被没有将最新的数据渲染到页面中去，也就是说此时data中的数据是新的，但是页面还是之前的样子。当执行完beforeUpdate时，才会将数据渲染为新的DOM并将其挂载到页面中去。然后执行update，此时页面和data都是最新的。销毁阶段包括beforeDestroy和destroyed两个事件。当实例需要被销毁时，就会触发这两个钩子，执行beforeDestroy时，vue实例就从运行阶段进入了销毁阶段，此时vue实例的过滤器，指令等等还没有被销毁，还处于可以状态。当执行到destroyed时，实例就已经被完全销毁了。以上就是我对vue生命周期的理解，下面附上官方的解释流程图]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识Vue.js(二)]]></title>
     <url>%2F2019%2F07%2F26%2F%E5%88%9D%E8%AF%86Vue-js-%E4%BA%8C%2F</url>
     <content type="text"><![CDATA[过滤器vue.js允许我们自己自定义过滤器，用于格式化一些文本，它只能用在插值和v-bind表达式上。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示；vue中的过滤器主要包括全局过滤器和私有过滤器。全局过滤器的定义主要是通过Vue.filter(‘过滤器名称’,处理函数)进行定义，他接受两个参数，第一个参数为过滤器的名称，第二个为处理函数。处理函数可以有n个参数，其中第一个为变量自身，后面的参数为传递过来的参数。过滤器也支持同时使用多个过滤器，根据调用的先后顺序，将前一个过滤器的处理结果，当作下一个过滤器的初始值。私有过滤器是在当前vm实例上通过filters属性进行定义，它只能在当前vm实例控制的区域才能发挥作用，其他与全局过滤器一致。当有私有过滤器与全局过滤器重名时，采用就近原则，优先调用私有过滤器。 自定义指令vue.js允许我们自定义指令，可以将一些常用的操作定义为指令。通过Vue.directive(‘指令名称’,对象)方法可以定义指令，这里指令名称在定义时不用加v-前缀，但是在调用时，需加v-前缀。第二个参数为一个对象，它具有一些指令相关的函数我这只列举常用的三个bind,inserted,updated。其中bind表示指令刚绑定到元素时，inserted表示将元素插入DOM时，updated表示当数据更新时。这些函数有多个参数，第一个参数为el，表示该元素自身，为一个DOM对象，第二个参数为binding，时一个对象，它包含了一些指令的信息。下面为一个自定义一个自动获取焦点的指令v-focus。 自定义全局和局部的 自定义指令： 123456789101112131415161718192021222324252627282930313233343536// 自定义全局指令 v-focus，为绑定的元素自动获取焦点：Vue.directive(&apos;focus&apos;, &#123; inserted: function (el) &#123; // inserted 表示被绑定元素插入父节点时调用 el.focus(); &#125;&#125;);// 自定义局部指令 v-color 和 v-font-weight，为绑定的元素设置指定的字体颜色 和 字体粗细： directives: &#123; color: &#123; // 为元素设置指定的字体颜色 bind(el, binding) &#123; el.style.color = binding.value; &#125; &#125;, &apos;font-weight&apos;: function (el, binding2) &#123; // 自定义指令的简写形式，等同于定义了 bind 和 update 两个钩子函数 el.style.fontWeight = binding2.value; &#125; &#125; 自定义指令的使用方式： 12&lt;input type=&quot;text&quot; v-model=&quot;searchName&quot; v-focus v-color=&quot;&apos;red&apos;&quot; v-font-weight=&quot;900&quot;&gt;]]></content>

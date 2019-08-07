@@ -96,18 +96,20 @@
 
 
 
-  <meta name="description" content="前言昨天在上传博客图片时遇到了一个很神奇的问题，部分图片加载，部分不加载。上网搜索发现好像大家都是全部加载不出来，下个插件解决。这与我遇到的问题不太一样，于是开始了自己推测解决问题的历程。 猜测一(自己本地缓存没有清理干净)因为我一般上传博客不习惯用hexo clean清理一下(懒),猜测可能由于自己没有清理干净，导致上传的时候冲突，才无法显示。清理掉本地缓存后，接着上传，还是无法显示。—–失败">
-<meta name="keywords" content="hexo图片加载问题">
+  <meta name="description" content="Vue的生命周期Vue的生命周期就如同自然界各种生物的生命周期一样，从生到死所经历的一系列事情。分为创建，挂载，运行，销毁四个阶段，每个阶段又有前后之分。所以一共有8个生命周期函数，也叫生命周期钩子。创建阶段包含beforeCreate和created两个事件。当我们用var vm = Vue({})去声明一个Vue实例时，就要开始创建Vue实例，首先是初始化一个空的Vue的实例对象，然后就到了b">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决hexo部分图片加载">
-<meta property="og:url" content="https://LG19981219.github.io/2019/06/29/解决hexo部分图片加载/index.html">
+<meta property="og:title" content="初识Vue.js(三)">
+<meta property="og:url" content="https://LG19981219.github.io/2019/07/28/初识Vue-js-三/index.html">
 <meta property="og:site_name" content="LG">
-<meta property="og:description" content="前言昨天在上传博客图片时遇到了一个很神奇的问题，部分图片加载，部分不加载。上网搜索发现好像大家都是全部加载不出来，下个插件解决。这与我遇到的问题不太一样，于是开始了自己推测解决问题的历程。 猜测一(自己本地缓存没有清理干净)因为我一般上传博客不习惯用hexo clean清理一下(懒),猜测可能由于自己没有清理干净，导致上传的时候冲突，才无法显示。清理掉本地缓存后，接着上传，还是无法显示。—–失败">
+<meta property="og:description" content="Vue的生命周期Vue的生命周期就如同自然界各种生物的生命周期一样，从生到死所经历的一系列事情。分为创建，挂载，运行，销毁四个阶段，每个阶段又有前后之分。所以一共有8个生命周期函数，也叫生命周期钩子。创建阶段包含beforeCreate和created两个事件。当我们用var vm = Vue({})去声明一个Vue实例时，就要开始创建Vue实例，首先是初始化一个空的Vue的实例对象，然后就到了b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-29T01:41:39.156Z">
+<meta property="og:image" content="https://lg19981219.github.io/2019/07/28/初识Vue-js-三/lifecycle.png">
+<meta property="og:updated_time" content="2019-08-07T02:46:39.224Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决hexo部分图片加载">
-<meta name="twitter:description" content="前言昨天在上传博客图片时遇到了一个很神奇的问题，部分图片加载，部分不加载。上网搜索发现好像大家都是全部加载不出来，下个插件解决。这与我遇到的问题不太一样，于是开始了自己推测解决问题的历程。 猜测一(自己本地缓存没有清理干净)因为我一般上传博客不习惯用hexo clean清理一下(懒),猜测可能由于自己没有清理干净，导致上传的时候冲突，才无法显示。清理掉本地缓存后，接着上传，还是无法显示。—–失败">
+<meta name="twitter:title" content="初识Vue.js(三)">
+<meta name="twitter:description" content="Vue的生命周期Vue的生命周期就如同自然界各种生物的生命周期一样，从生到死所经历的一系列事情。分为创建，挂载，运行，销毁四个阶段，每个阶段又有前后之分。所以一共有8个生命周期函数，也叫生命周期钩子。创建阶段包含beforeCreate和created两个事件。当我们用var vm = Vue({})去声明一个Vue实例时，就要开始创建Vue实例，首先是初始化一个空的Vue的实例对象，然后就到了b">
+<meta name="twitter:image" content="https://lg19981219.github.io/2019/07/28/初识Vue-js-三/lifecycle.png">
 
 
 
@@ -115,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://LG19981219.github.io/2019/06/29/解决hexo部分图片加载/">
+  <link rel="canonical" href="https://LG19981219.github.io/2019/07/28/初识Vue-js-三/">
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>解决hexo部分图片加载 | LG</title>
+  <title>初识Vue.js(三) | LG</title>
   
 
 
@@ -353,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://LG19981219.github.io/2019/06/29/解决hexo部分图片加载/">
+    <link itemprop="mainEntityOfPage" href="https://LG19981219.github.io/2019/07/28/初识Vue-js-三/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LG">
@@ -370,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解决hexo部分图片加载
+          <h1 class="post-title" itemprop="name headline">初识Vue.js(三)
 
               
             
@@ -396,7 +398,7 @@
                 
               
 
-              <time title="创建时间：2019-06-29 09:13:29 / 修改时间：09:41:39" itemprop="dateCreated datePublished" datetime="2019-06-29T09:13:29+08:00">2019-06-29</time>
+              <time title="创建时间：2019-07-28 10:03:36" itemprop="dateCreated datePublished" datetime="2019-07-28T10:03:36+08:00">2019-07-28</time>
             
 
             
@@ -414,7 +416,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常问题/" itemprop="url" rel="index"><span itemprop="name">日常问题</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
 
                 
                 
@@ -456,12 +458,9 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>昨天在上传博客图片时遇到了一个很神奇的问题，部分图片加载，部分不加载。上网搜索发现好像大家都是全部加载不出来，下个插件解决。这与我遇到的问题不太一样，于是开始了自己推测解决问题的历程。</p>
-<h2 id="猜测一-自己本地缓存没有清理干净"><a href="#猜测一-自己本地缓存没有清理干净" class="headerlink" title="猜测一(自己本地缓存没有清理干净)"></a>猜测一(自己本地缓存没有清理干净)</h2><p>因为我一般上传博客不习惯用hexo clean清理一下(懒),猜测可能由于自己没有清理干净，导致上传的时候冲突，才无法显示。清理掉本地缓存后，接着上传，还是无法显示。—–失败</p>
-<h2 id="猜测二-上传路径不对"><a href="#猜测二-上传路径不对" class="headerlink" title="猜测二(上传路径不对)"></a>猜测二(上传路径不对)</h2><p>觉得是自己的路径不会，导致浏览器无法找到图片，按F12后发现果然浏览器报404错误—开心，找到问题所在了，于是去自己的github仓库查看，发现编译过后的html文件路径没有错误，并且图片也都在所属的文件内。—–失败</p>
+        <h1 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期"></a>Vue的生命周期</h1><p>Vue的生命周期就如同自然界各种生物的生命周期一样，从生到死所经历的一系列事情。分为创建，挂载，运行，销毁四个阶段，每个阶段又有前后之分。所以一共有8个生命周期函数，也叫生命周期钩子。<br>创建阶段包含beforeCreate和created两个事件。当我们用<code>var vm = Vue({})</code>去声明一个Vue实例时，就要开始创建Vue实例，首先是初始化一个空的Vue的实例对象，然后就到了beforeCreated函数，此时不管是data中的数据，还是methods中的数据都没有被初始化，所以这时只是一个空的Vue实例。执行完beforeCreated后就开始初始化data和methods中的数据和方法,然后到created钩子,创建阶段结束。通过创建阶段的执行过程，我们可以看出，要想使用data中的数据或者methods中的方法，最早只能在created中使用。<br>挂载阶段包含beforeMount和mounted两个事件。当创建阶段完成后，就需要根据创建阶段初始化好的数据，在内存中渲染好DOM，执行beforeMount钩子，也就是说在beforeMount函数执行时，模板还在内存中，并没有挂载到页面中去。当beforeMount执行完毕后，会将内存中的DOM挂载到页面上去，执行mounted钩子。也就是说如果在操作DOM，最早得在mounted中使用。  </p>
 <a id="more"></a>
-<h2 id="猜测三-图片自身格式问题"><a href="#猜测三-图片自身格式问题" class="headerlink" title="猜测三(图片自身格式问题)"></a>猜测三(图片自身格式问题)</h2><p>因为自己的问题是部分图片未加载,而唯一加载的那一张是我自己画的png格式的图,未加载的图片是我电脑截屏的png格式的图,于是自己从网上下了一张png格式的图,自己在本地又截了一张，上传，刷新，果然下载的图片可以显示,而截图无法显示。找到问题十分开心，可是该怎么解决，仔细看自己的代码发现所有jpg格式的图片都可以显示,于是自己将所有的电脑截屏的图片改为了jpg格式的，上传，刷新，成功显示—-完结撒花</p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>解决完问题后，百度了一下两种图片有什么区别,简言之就是png格式的图片占据空间大，是无损压缩，而jpg格式的图片是有损压缩，是最适合在万维网上传输和存储的图片格式。</p>
+<p>运行阶段包括beforeUpdate,updated两个事件。运行阶段主要就是数据的更新，以及从新渲染到页面中去。当数据发生改变时，会执行beforeUpdate,但是此时被没有将最新的数据渲染到页面中去，也就是说此时data中的数据是新的，但是页面还是之前的样子。当执行完beforeUpdate时，才会将数据渲染为新的DOM并将其挂载到页面中去。然后执行update，此时页面和data都是最新的。<br>销毁阶段包括beforeDestroy和destroyed两个事件。当实例需要被销毁时，就会触发这两个钩子，执行beforeDestroy时，vue实例就从运行阶段进入了销毁阶段，此时vue实例的过滤器，指令等等还没有被销毁，还处于可以状态。当执行到destroyed时，实例就已经被完全销毁了。<br>以上就是我对vue生命周期的理解，下面附上官方的解释流程图<br><img src="/2019/07/28/初识Vue-js-三/lifecycle.png" alt></p>
 
       
     </div>
@@ -485,7 +484,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo图片加载问题/" rel="tag"><i class="fa fa-tag"></i> hexo图片加载问题</a>
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
           
         </div>
       
@@ -498,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/28/flex弹性布局-三/" rel="next" title="flex弹性布局 三">
-                <i class="fa fa-chevron-left"></i> flex弹性布局 三
+              <a href="/2019/07/26/初识Vue-js-二/" rel="next" title="初识Vue.js(二)">
+                <i class="fa fa-chevron-left"></i> 初识Vue.js(二)
               </a>
             
           </div>
@@ -507,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/03/javascript基本类型及操作符/" rel="prev" title="javascript基本类型及操作符">
-                javascript基本类型及操作符 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -723,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#猜测一-自己本地缓存没有清理干净"><span class="nav-number">1.1.</span> <span class="nav-text">猜测一(自己本地缓存没有清理干净)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#猜测二-上传路径不对"><span class="nav-number">1.2.</span> <span class="nav-text">猜测二(上传路径不对)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#猜测三-图片自身格式问题"><span class="nav-number">1.3.</span> <span class="nav-text">猜测三(图片自身格式问题)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue的生命周期"><span class="nav-number">1.</span> <span class="nav-text">Vue的生命周期</span></a></li></ol></div>
             
 
           </div>
