@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初识Vue.js(四)]]></title>
+    <url>%2F2019%2F07%2F31%2F%E5%88%9D%E8%AF%86Vue-js-%E5%9B%9B%2F</url>
+    <content type="text"><![CDATA[vue的动画的基本用法vue为我们提供了一些过渡类的动画，通过对给定的类进行操作，可以给使用者带来更加良好的体验，让过渡显得不那么突兀。 上图就是vue所规定的几个过渡时间。其中v-enter与v-leave-to表示进场和离场的时刻，他们的样式是相同的，v-enter-active与v-leave-active表示进场时间段和出场时间段,v-enter-to与v-leave过渡的最终效果，但一般不使用。了解了vue动画的几个时刻就可以来写一些简单的动画。首先我们将要添加动画的元素放入transition标签内，表示这是动画的控制区域，然后通过对其添加v-enter,v-leave-to控制进场之前的样式，v-enter-active与v-leave-active控制过渡的时间和样式，就可以完成基本的动画过渡.有时候我们不想使用v-前缀，就可以在transition标签的name属性上写上我们自己想要的名字,就可以将v-前缀替换成我们想要的名字。 使用第三方类库及钩子函数vue动画也可以使用第三方的动画类库，例如animate。首先将animate导入，然后在transition标签的enter-active-class添加入场动画类，leave-active-class添加出场动画类就可以实现第三方类库的使用。同时还可以通过duration为其指定过渡时长，如果想分别指定离开和进入的过渡时长，那么传入一个对象分别指定即可。vue动画也有自己的钩子函数，可以将其看作是vue动画的生命周期函数，它可以帮我们实现半场动画主要有before-enter,enter,after-enter,enter-cancelled(不常用),before-leave,leave,after-leave,leave-cancelled(不常用),通过对其绑定事件即可实现半场动画。]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识Vue.js(三)]]></title>
     <url>%2F2019%2F07%2F28%2F%E5%88%9D%E8%AF%86Vue-js-%E4%B8%89%2F</url>
     <content type="text"><![CDATA[Vue的生命周期Vue的生命周期就如同自然界各种生物的生命周期一样，从生到死所经历的一系列事情。分为创建，挂载，运行，销毁四个阶段，每个阶段又有前后之分。所以一共有8个生命周期函数，也叫生命周期钩子。创建阶段包含beforeCreate和created两个事件。当我们用var vm = Vue({})去声明一个Vue实例时，就要开始创建Vue实例，首先是初始化一个空的Vue的实例对象，然后就到了beforeCreated函数，此时不管是data中的数据，还是methods中的数据都没有被初始化，所以这时只是一个空的Vue实例。执行完beforeCreated后就开始初始化data和methods中的数据和方法,然后到created钩子,创建阶段结束。通过创建阶段的执行过程，我们可以看出，要想使用data中的数据或者methods中的方法，最早只能在created中使用。挂载阶段包含beforeMount和mounted两个事件。当创建阶段完成后，就需要根据创建阶段初始化好的数据，在内存中渲染好DOM，执行beforeMount钩子，也就是说在beforeMount函数执行时，模板还在内存中，并没有挂载到页面中去。当beforeMount执行完毕后，会将内存中的DOM挂载到页面上去，执行mounted钩子。也就是说如果在操作DOM，最早得在mounted中使用。 运行阶段包括beforeUpdate,updated两个事件。运行阶段主要就是数据的更新，以及从新渲染到页面中去。当数据发生改变时，会执行beforeUpdate,但是此时被没有将最新的数据渲染到页面中去，也就是说此时data中的数据是新的，但是页面还是之前的样子。当执行完beforeUpdate时，才会将数据渲染为新的DOM并将其挂载到页面中去。然后执行update，此时页面和data都是最新的。销毁阶段包括beforeDestroy和destroyed两个事件。当实例需要被销毁时，就会触发这两个钩子，执行beforeDestroy时，vue实例就从运行阶段进入了销毁阶段，此时vue实例的过滤器，指令等等还没有被销毁，还处于可以状态。当执行到destroyed时，实例就已经被完全销毁了。以上就是我对vue生命周期的理解，下面附上官方的解释流程图]]></content>
