@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初识Vue.js(五)]]></title>
+    <url>%2F2019%2F08%2F02%2F%E5%88%9D%E8%AF%86Vue-js-%E4%BA%94%2F</url>
+    <content type="text"><![CDATA[vue组件基本用法在使用组件时，首先就是要定义组件,通过Vue.component(“组件名称”,模板对象)来定义一个全局组件，当然你也可以在vue实例里通过components来定义私有组件。模板对象的定义如下: 12345678910//第一种var obj = vue.extend(&#123; template:&apos;DOM模板&apos;&#125;);//第二种&#123; template:&apos;DOM模板&apos;&#125;//第三种&lt;template&gt;DOM模板&lt;/template&gt; 通过上述三种方式我们就可以定义一个模板对象，并且结合Vue.component方法定义一个组件。然后通过标签直接调用。注意这里的组件名称是以驼峰命名的那么要用-连接符来分离不同单词进行调用，同时在定义模板对象时，所有的dom结构应处于同一根元素下。 组件中的data组件也有自己的data,但它与vue实例的data有所不同,它是一个函数并且返回一个对象。至于为什么要将组件中的data设计成为一个函数，这是因为组件可能被多次调用，如果将data设置为一个对象,那么这些实例都将指向同一个对象，会互相影响，这显然不符合我们的要求。设计为一个函数，这样每一个实例都各自维护自己data，并不会互相影响。 组件传值父组件向子组件传值，默认情况下，子组件是无法访问父组件里的data数据的,只有通过一定的方法才可以访问。首先通过属性绑定将父组件的data数据传递给子组件，然后子组件在props属性中定义该同名数据，然后子组件中通过插值表达式即可访问。示例代码如下: 123456789101112131415161718&lt;div id=&quot;app&quot;&gt; &lt;p&gt;&#123;&#123; msg &#125;&#125;&lt;/p&gt; &lt;logion :parent=&quot;msg&quot;&gt;&lt;/logion&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue(&#123; el: &quot;#app&quot;, data: &#123; msg: &quot;我是父亲&quot;, &#125;, components: &#123; logion: &#123; template: &quot;&lt;h3&gt;我是儿子 -- &#123;&#123; parent &#125;&#125;&lt;/h3&gt;&quot;, props: [&quot;parent&quot;], &#125; &#125; &#125;) &lt;/script&gt; 子组件向父组件传值。子组件可以通过事件调用的方式给父组件传值，及父组件先传递给子组件一个事件，然后子组件通过调用这个事件然后将值传递给父组件。示例代码如下: 12345678910111213141516171819202122232425262728293031323334353637&lt;div id=&quot;app&quot;&gt; &lt;login @parentfunc=&quot;show&quot;&gt;&lt;/login&gt; &lt;/div&gt; &lt;template id=&quot;my&quot;&gt; &lt;button @click=&quot;child&quot;&gt;传值&lt;/button&gt; &lt;/template&gt; &lt;script&gt; var vm = new Vue(&#123; el: &quot;#app&quot;, data: &#123; msg: &quot;我是父亲&quot;, parentMsg: null, &#125;, methods: &#123; show(data)&#123; console.log(&apos;我是父组件 -----&apos; + data); this.parentMsg = data; console.log(this.parentMsg); &#125; &#125;, components: &#123; login: &#123; template: &quot;#my&quot;, data: function()&#123; return &#123; childMsg: &quot;我是子组件的数据&quot; &#125; &#125;, methods:&#123; child()&#123; this.$emit(&quot;parentfunc&quot;,this.childMsg); &#125; &#125; &#125; &#125; &#125;) &lt;/script&gt;]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识Vue.js(四)]]></title>
     <url>%2F2019%2F07%2F31%2F%E5%88%9D%E8%AF%86Vue-js-%E5%9B%9B%2F</url>
     <content type="text"><![CDATA[vue的动画的基本用法vue为我们提供了一些过渡类的动画，通过对给定的类进行操作，可以给使用者带来更加良好的体验，让过渡显得不那么突兀。 上图就是vue所规定的几个过渡时间。其中v-enter与v-leave-to表示进场和离场的时刻，他们的样式是相同的，v-enter-active与v-leave-active表示进场时间段和出场时间段,v-enter-to与v-leave过渡的最终效果，但一般不使用。了解了vue动画的几个时刻就可以来写一些简单的动画。首先我们将要添加动画的元素放入transition标签内，表示这是动画的控制区域，然后通过对其添加v-enter,v-leave-to控制进场之前的样式，v-enter-active与v-leave-active控制过渡的时间和样式，就可以完成基本的动画过渡.有时候我们不想使用v-前缀，就可以在transition标签的name属性上写上我们自己想要的名字,就可以将v-前缀替换成我们想要的名字。 使用第三方类库及钩子函数vue动画也可以使用第三方的动画类库，例如animate。首先将animate导入，然后在transition标签的enter-active-class添加入场动画类，leave-active-class添加出场动画类就可以实现第三方类库的使用。同时还可以通过duration为其指定过渡时长，如果想分别指定离开和进入的过渡时长，那么传入一个对象分别指定即可。vue动画也有自己的钩子函数，可以将其看作是vue动画的生命周期函数，它可以帮我们实现半场动画主要有before-enter,enter,after-enter,enter-cancelled(不常用),before-leave,leave,after-leave,leave-cancelled(不常用),通过对其绑定事件即可实现半场动画。]]></content>
