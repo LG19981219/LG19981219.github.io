@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js中0.1+0.2！=0.3]]></title>
+    <url>%2F2019%2F09%2F07%2Fjs%E4%B8%AD0-1-0-2%EF%BC%81-0-3%2F</url>
+    <content type="text"><![CDATA[0.1+0.2 ！= 0.3今天在做一个公司的笔试题的时候发现遇到一个有意思的问题0.1 + 0.2 === 0.3 是true还是false,当时我觉得可能因为精度问题不一定相当，就蒙了一个false，然后下来查了查，还真是因为精度问题，导致0.1 + 0.2 其实等于0.30000000000004，所以其实是不相等的。虽然在计算机中这种是不相等的，但在数学逻辑上却明显是相等的，那么怎么解决呢，参考了一些网上的做法，就是让这两个值相减小于一个极小值就行了，而这个极小值，ES6已经为我们定义好了——Number.EPSILON表示2.220446049250313e-16。下面是解决代码. 123456function isEqual(num1,num2)&#123; return Math.abs(num1 - num2) &lt; Number.EPSILON&#125;var a = 0.1 + 0.2var b = 0.3console.log(isEqual(a, b)) //true 但是这个属性在IE浏览器中是不被支持的所以应该对这个属性进行一个判断，如果有就是原值，如果没有就给它赋值2的-52次方 123Number.EPSILON = (function()&#123; return Number.EPSILON?Number.EPSILON:Math.pow(2,-52);&#125;)();]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识Vue.js(五)]]></title>
     <url>%2F2019%2F08%2F02%2F%E5%88%9D%E8%AF%86Vue-js-%E4%BA%94%2F</url>
     <content type="text"><![CDATA[vue组件基本用法在使用组件时，首先就是要定义组件,通过Vue.component(“组件名称”,模板对象)来定义一个全局组件，当然你也可以在vue实例里通过components来定义私有组件。模板对象的定义如下: 12345678910//第一种var obj = vue.extend(&#123; template:&apos;DOM模板&apos;&#125;);//第二种&#123; template:&apos;DOM模板&apos;&#125;//第三种&lt;template&gt;DOM模板&lt;/template&gt; 通过上述三种方式我们就可以定义一个模板对象，并且结合Vue.component方法定义一个组件。然后通过标签直接调用。注意这里的组件名称是以驼峰命名的那么要用-连接符来分离不同单词进行调用，同时在定义模板对象时，所有的dom结构应处于同一根元素下。 组件中的data组件也有自己的data,但它与vue实例的data有所不同,它是一个函数并且返回一个对象。至于为什么要将组件中的data设计成为一个函数，这是因为组件可能被多次调用，如果将data设置为一个对象,那么这些实例都将指向同一个对象，会互相影响，这显然不符合我们的要求。设计为一个函数，这样每一个实例都各自维护自己data，并不会互相影响。 组件传值父组件向子组件传值，默认情况下，子组件是无法访问父组件里的data数据的,只有通过一定的方法才可以访问。首先通过属性绑定将父组件的data数据传递给子组件，然后子组件在props属性中定义该同名数据，然后子组件中通过插值表达式即可访问。示例代码如下: 123456789101112131415161718&lt;div id=&quot;app&quot;&gt; &lt;p&gt;&#123;&#123; msg &#125;&#125;&lt;/p&gt; &lt;logion :parent=&quot;msg&quot;&gt;&lt;/logion&gt; &lt;/div&gt; &lt;script&gt; var vm = new Vue(&#123; el: &quot;#app&quot;, data: &#123; msg: &quot;我是父亲&quot;, &#125;, components: &#123; logion: &#123; template: &quot;&lt;h3&gt;我是儿子 -- &#123;&#123; parent &#125;&#125;&lt;/h3&gt;&quot;, props: [&quot;parent&quot;], &#125; &#125; &#125;) &lt;/script&gt; 子组件向父组件传值。子组件可以通过事件调用的方式给父组件传值，及父组件先传递给子组件一个事件，然后子组件通过调用这个事件然后将值传递给父组件。示例代码如下: 12345678910111213141516171819202122232425262728293031323334353637&lt;div id=&quot;app&quot;&gt; &lt;login @parentfunc=&quot;show&quot;&gt;&lt;/login&gt; &lt;/div&gt; &lt;template id=&quot;my&quot;&gt; &lt;button @click=&quot;child&quot;&gt;传值&lt;/button&gt; &lt;/template&gt; &lt;script&gt; var vm = new Vue(&#123; el: &quot;#app&quot;, data: &#123; msg: &quot;我是父亲&quot;, parentMsg: null, &#125;, methods: &#123; show(data)&#123; console.log(&apos;我是父组件 -----&apos; + data); this.parentMsg = data; console.log(this.parentMsg); &#125; &#125;, components: &#123; login: &#123; template: &quot;#my&quot;, data: function()&#123; return &#123; childMsg: &quot;我是子组件的数据&quot; &#125; &#125;, methods:&#123; child()&#123; this.$emit(&quot;parentfunc&quot;,this.childMsg); &#125; &#125; &#125; &#125; &#125;) &lt;/script&gt;]]></content>
